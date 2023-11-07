@@ -1,0 +1,84 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: aliceblue;
+}
+
+h1,
+h2 {
+    font-size: 72px;
+    text-align: center;
+    margin: 30px 0 15px 0;
+}
+
+button {
+    display: block;
+    margin: auto;
+    background-color: #d71920;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    cursor: url("../img/palu.png"), auto;
+}
+
+.container:active {
+    cursor: url("../img/palu_after.png"), auto;
+}
+
+.tanah {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    float: left;
+}
+
+.tanah::after {
+    content: "";
+    display: block;
+    width: 200px;
+    height: 100px;
+    background: url("../img/tanah.png") bottom center no-repeat;
+    background-size: 80%;
+    position: absolute;
+    bottom: -25px;
+}
+
+.tikus {
+    width: 100%;
+    height: 100%;
+    background: url("../img/tikus.png") bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100px;
+    transition: top 0.3s;
+}
+
+.tanah.muncul .tikus {
+    top: 0;
+}
+
+.alert-display {
+    display: none;
+}
+
+@media only screen and (max-width: 500px) {
+    main {
+        display: none;
+    }
+
+    .alert-display {
+        color: #d71920;
+        display: grid;
+        text-align: center;
+        padding: 50% 0;
+        margin: auto;
+    }
+}
